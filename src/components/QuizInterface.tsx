@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -260,7 +259,7 @@ const QuizInterface = ({ subjects }: QuizInterfaceProps) => {
       <div className="flex items-center justify-between">
         <div className="text-center space-y-2">
           <h2 className="text-3xl font-bold text-gray-900">{selectedSubject.name}</h2>
-          <p className="text-lg text-gray-600">CS 핵심 개념을 확인해보세요</p>
+          <p className="text-lg text-gray-600">핵심 개념을 확인해보세요</p>
         </div>
         <Button variant="outline" onClick={backToSubjectSelection}>
           과목 변경

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -140,7 +139,7 @@ const Index = () => {
             {/* Welcome Section */}
             <div className="text-center space-y-4">
               <h2 className="text-3xl font-bold text-gray-900">안녕하세요, 행성님! 👋</h2>
-              <p className="text-lg text-gray-600">오늘도 꾸준한 복습으로 CS 지식을 쌓아보세요</p>
+              <p className="text-lg text-gray-600">오늘도 꾸준한 복습으로 지식을 쌓아보세요</p>
             </div>
 
             {/* Today's Stats */}
