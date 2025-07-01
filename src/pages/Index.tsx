@@ -8,12 +8,14 @@ import { BookOpen, Brain, Clock, TrendingUp, Plus, Bell, Target, Award } from 'l
 import SubjectCard from '@/components/SubjectCard';
 import QuizInterface from '@/components/QuizInterface';
 import ScheduleManager from '@/components/ScheduleManager';
+import AddSubjectForm from '@/components/AddSubjectForm';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [showAddSubjectForm, setShowAddSubjectForm] = useState(false);
   
   // Mock data for demonstration
-  const subjects = [
+  const [subjects, setSubjects] = useState([
     {
       id: 1,
       name: '운영체제',
@@ -50,13 +52,36 @@ const Index = () => {
       correctRate: 70,
       color: 'bg-gradient-to-r from-purple-500 to-pink-600'
     }
-  ];
+  ]);
 
   const todayStats = {
     questionsAnswered: 12,
     correctAnswers: 9,
     studyTime: '25분',
     streak: 7
+  };
+
+  const addSubject = (newSubject: { name: string; notionUrl: string }) => {
+    const colors = [
+      'bg-gradient-to-r from-indigo-500 to-blue-600',
+      'bg-gradient-to-r from-emerald-500 to-green-600',
+      'bg-gradient-to-r from-rose-500 to-pink-600',
+      'bg-gradient-to-r from-amber-500 to-yellow-600',
+      'bg-gradient-to-r from-cyan-500 to-teal-600'
+    ];
+    
+    const newSubjectData = {
+      id: subjects.length + 1,
+      name: newSubject.name,
+      progress: 0,
+      nextReview: '곧 시작',
+      totalQuestions: 0,
+      correctRate: 0,
+      color: colors[subjects.length % colors.length]
+    };
+    
+    setSubjects([...subjects, newSubjectData]);
+    setShowAddSubjectForm(false);
   };
 
   return (
@@ -191,6 +216,7 @@ const Index = () => {
                   <Button 
                     variant="outline" 
                     className="p-6 h-auto flex-col space-y-2 border-2 hover:bg-blue-50"
+                    onClick={() => setShowAddSubjectForm(true)}
                   >
                     <Plus className="w-6 h-6" />
                     <span>새 과목 추가</span>
@@ -225,6 +251,14 @@ const Index = () => {
                 ))}
               </div>
             </div>
+
+            {/* Add Subject Form Modal */}
+            {showAddSubjectForm && (
+              <AddSubjectForm 
+                onAdd={addSubject}
+                onClose={() => setShowAddSubjectForm(false)}
+              />
+            )}
           </div>
         )}
 
