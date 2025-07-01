@@ -1,73 +1,143 @@
-# Welcome to your Lovable project
+# 프로토타입 링크
 
-## Project info
+[바로가기](https://memoriis.lovable.app)
 
-**URL**: https://lovable.dev/projects/30f455f9-ba60-45ef-aea4-f242e91787e1
+# 페르소나
 
-## How can I edit this code?
+### 행성이
 
-There are several ways of editing your application.
+- 신분: 컴퓨터공학과 4학년 대학생
+- **학습 패턴**: 노션에 열심히 정리하지만 복습은 소홀, 시험 기간 벼락치기
+- **목표**: 꾸준한 복습으로 실제 기억에 남는 학습하기
+- **니즈**: 정리한 내용을 잊지 않도록 주기적 복습, 효율적인 시간 활용
+- **페인 포인트**: 정리만 하고 복습 안 함, 시험 전 다시 처음부터 공부해야 함
+- **디바이스**: 노션(PC), 스마트폰(복습용)
+- **현재 수강 과목**: 운영체제, 네트워크 프로그래밍, 데이터베이스, 소프트웨어공학
 
-**Use Lovable**
+## 사용자 시나리오 및 스토리
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/30f455f9-ba60-45ef-aea4-f242e91787e1) and start prompting.
+### 시나리오 1: 운영체제 중간고사 준비하기
 
-Changes made via Lovable will be committed automatically to this repo.
+> 행성이가 운영체제 중간고사를 2주 앞두고 있지만, 노션에 정리해둔 프로세스/스레드 개념들이 헷갈리고 기억이 잘 안 나는 상황
+> 
 
-**Use your preferred IDE**
+**사용자 시나리오**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. 노션에 정리한 "운영체제 - 프로세스와 스레드" 내용을 서비스에 입력
+2. 매일 저녁 9시 과제 후 복습 시간으로 알림 설정
+3. AI가 운영체제 개념 문제 생성: "프로세스와 스레드의 차이점은?", "컨텍스트 스위칭이란?"
+4. 매일 3-4문제씩 풀면서 핵심 개념 정착
+5. 틀린 문제(데드락 개념)는 다음날 재출제, 맞춘 문제는 3일 후 재출제
+6. 시험 1주일 전부터 틀렸던 문제들 집중 복습으로 완벽 준비
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**사용자 스토리**
 
-Follow these steps:
+*"컴공과 4학년으로서, 저는 노션에 정리한 CS 개념들을 시험에서 확실히 기억해내고 싶습니다. 그래서 벼락치기 없이 체계적으로 좋은 성적을 받을 수 있습니다."*
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+**인수 조건**
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- Given: 사용자가 운영체제 학습 내용을 입력하고 저녁 복습 시간을 설정했을 때
+- When: 매일 저녁 9시에 CS 개념 문제를 풀었을 때
+- Then: 이론과 실무가 결합된 문제가 출제되고, 정답률에 따라 복습 주기가 조정된다
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 시나리오 2: 스터디카페에서 자투리 시간 활용하기
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+> 행성이가 스터디카페에서 과제 사이사이 10-15분 자투리 시간에 데이터베이스 개념을 복습하고 싶어함
+> 
+
+**사용자 시나리오**
+
+1. "데이터베이스 정규화" 노션 페이지 내용을 앱에 연결
+2. 스터디카페 시간에 맞춰 "오후 2시, 4시, 6시" 간격으로 알림 설정
+3. 과제 중간 휴식 시간에 5분 내로 풀 수 있는 DB 문제 2-3개 출제
+4. "1NF, 2NF, 3NF의 차이점", "함수 종속성 판별" 등 핵심 개념 문제
+5. 일주일 후 데이터베이스 수업에서 교수님 질문에 자신 있게 답변
+6. 기말고사에서도 정규화 문제를 완벽하게 해결
+
+**사용자 스토리**
+*"졸업을 앞둔 학생으로서, 저는 스터디카페 자투리 시간을 활용해 CS 전공 지식을 확실히 내 것으로 만들고 싶습니다. 그래서 취업 면접에서도 자신 있게 기술 질문에 답할 수 있습니다."*
+
+**인수 조건**
+
+- Given: 사용자가 DB 학습 내용을 입력하고 스터디카페 시간으로 알림을 설정했을 때
+- When: 과제 중간 휴식 시간에 짧은 문제를 풀었을 때
+- Then: 5분 내에 풀 수 있는 핵심 개념 위주의 간결한 문제가 제공된다
+
+## 핵심 가치 제안
+
+1. **CS 전공 특화**: 단순 암기가 아닌 개념 이해와 응용력 향상에 초점
+2. **대학생 라이프스타일 맞춤**: 수업-스터디카페-과제 패턴에 최적화된 학습 시간
+3. **시험+취업 동시 대비**: 당장의 시험 성적과 장기적인 취업 준비 모두 지원
+4. **노션 연동 최적화**: 대학생들이 가장 많이 사용하는 노션과의 자연스러운 연결
+
+## 핵심 기능
+
+## 1. 학습 자료 연동 & 파싱
+
+```
+📝 다양한 형태의 학습 자료를 자동으로 분석
 ```
 
-**Edit a file directly in GitHub**
+- **노션 페이지**: URL 입력으로 실시간 동기화
+- **PDF 문서**: 파일 업로드 후 텍스트 추출
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 2. AI 기반 자동 문제 생성
 
-**Use GitHub Codespaces**
+```
+🤖 학습 내용을 분석해서 다양한 유형의 문제 자동 생성
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **객관식**: 핵심 개념 + 오답 선택지 자동 생성
+- **빈칸 채우기:** 중요 키워드를 빈칸으로 처리
+- **단답형**: 정의나 설명을 묻는 서술 문제
+- **순서 배열**: 절차나 단계를 순서대로 나열
+- **참/거짓**: 개념의 참/거짓 판별 문제
 
-## What technologies are used for this project?
+## 3. 스마트 복습 알림 시스템
 
-This project is built with:
+```
+⏰ 개인 맞춤형 복습 스케줄링으로 최적의 타이밍에 알림
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### 개인화된 알림 설정
 
-## How can I deploy this project?
+- **시간 설정**: 출퇴근, 점심시간, 자기 전 등 라이프스타일에 맞춤
+- **빈도 조절**: 매일/격일/주 3회 등 개인 선호도 반영
+- **문제 개수**: 2-10문제 범위에서 소요 시간 기반 설정
 
-Simply open [Lovable](https://lovable.dev/projects/30f455f9-ba60-45ef-aea4-f242e91787e1) and click on Share -> Publish.
+### 상황별 알림 메시지
 
-## Can I connect a custom domain to my Lovable project?
+```
+📱 "📚 CS 복습 시간이에요! (3문제, 2분 소요)"
+📱 "⚡ 점심시간 퀴즈! React Hook 문제 5개"
+📱 "🔥 연속 학습 7일차! 오늘도 화이팅!"
+```
 
-Yes, you can!
+## 4. 적응형 복습 스케줄링
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```
+🧠 망각곡선과 정답률을 기반으로 한 과학적 복습 주기 자동 조정
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### 정답률 기반 재출제 로직
+
+- **틀린 문제**: 1일 후 재출제
+- **맞춘 문제**: 3일 → 7일 → 14일 → 30일 간격으로 연장
+- **어려운 개념**: 더 짧은 주기로 반복 출제
+- **완전 습득**: 장기 기억 확인용으로 월 1회 출제
+
+### 취약점 집중 관리
+
+- 정답률 낮은 개념을 자동으로 식별
+- 시험이나 중요 일정 전 취약점 집중 복습
+- 관련 개념끼리 묶어서 종합 문제 출제
+
+## 구현 범위 (MVP)
+
+### 핵심 사용자 플로우
+
+1. **학습 과목 선택** → "운영체제", "데이터베이스" 등 수강 과목별 선택
+2. **노션 연동** → 기존에 정리해둔 노션 페이지 내용 불러오기
+3. **복습 스케줄 설정** → 수업 시간표에 맞춘 맞춤형 알림 시간
+4. **문제 풀이** → 이론 이해 + 실무 응용 + 면접 대비 문제
+5. **성과 추적** → 과목별 성취도, 시험 준비도, 취업 준비 진도율
