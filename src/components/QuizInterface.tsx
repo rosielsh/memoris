@@ -28,92 +28,105 @@ const QuizInterface = ({ subjects }: QuizInterfaceProps) => {
   const [score, setScore] = useState(0);
   const [answered, setAnswered] = useState<boolean[]>([]);
 
-  // Mock quiz data by subject
+  // Mock quiz data by subject - diverse topics for all professions
   const quizData: { [key: string]: any[] } = {
-    '운영체제': [
+    '마케팅 전략': [
       {
         id: 1,
-        subject: '운영체제',
-        question: '프로세스(Process)와 스레드(Thread)의 가장 중요한 차이점은 무엇인가요?',
+        subject: '마케팅 전략',
+        question: '4P 마케팅 믹스에 포함되지 않는 요소는 무엇인가요?',
         options: [
-          '프로세스는 운영체제가, 스레드는 프로그래머가 관리한다',
-          '프로세스는 독립적인 메모리 공간을 가지지만, 스레드는 메모리 공간을 공유한다',
-          '프로세스는 CPU를 사용하지만, 스레드는 메모리만 사용한다',
-          '프로세스와 스레드는 본질적으로 동일하다'
+          'Product (제품)',
+          'Price (가격)',
+          'Promotion (촉진)',
+          'People (사람)'
         ],
-        correctAnswer: 1,
-        explanation: '프로세스는 각자 독립적인 메모리 공간(코드, 데이터, 힙, 스택)을 가지지만, 스레드는 같은 프로세스 내에서 코드, 데이터, 힙 영역을 공유하고 스택만 독립적으로 가집니다.'
+        correctAnswer: 3,
+        explanation: '전통적인 4P 마케팅 믹스는 Product(제품), Price(가격), Place(유통), Promotion(촉진)으로 구성됩니다. People은 7P 확장 모델에 포함되는 요소입니다.'
       },
       {
         id: 2,
-        subject: '운영체제',
-        question: '데드락(Deadlock)이 발생하기 위한 4가지 필요조건이 아닌 것은?',
+        subject: '마케팅 전략',
+        question: 'SWOT 분석에서 S는 무엇을 의미하나요?',
         options: [
-          '상호 배제(Mutual Exclusion)',
-          '점유와 대기(Hold and Wait)',
-          '선점 불가(No Preemption)',
-          '우선순위 역전(Priority Inversion)'
+          'Strategy (전략)',
+          'Strength (강점)',
+          'Service (서비스)',
+          'Sales (판매)'
         ],
-        correctAnswer: 3,
-        explanation: '데드락의 4가지 필요조건은 상호배제, 점유와 대기, 선점 불가, 순환 대기입니다. 우선순위 역전은 데드락의 필요조건이 아닙니다.'
+        correctAnswer: 1,
+        explanation: 'SWOT 분석은 Strength(강점), Weakness(약점), Opportunity(기회), Threat(위협)를 분석하는 전략 도구입니다.'
       }
     ],
-    '데이터베이스': [
+    '회계원리': [
       {
         id: 1,
-        subject: '데이터베이스',
-        question: '데이터베이스 정규화에서 제1정규형(1NF)의 조건은 무엇인가요?',
+        subject: '회계원리',
+        question: '복식부기의 기본 원리는 무엇인가요?',
         options: [
-          '모든 속성이 원자값(Atomic Value)이어야 한다',
-          '부분 함수 종속을 제거해야 한다',
-          '이행 함수 종속을 제거해야 한다',
-          '다치 종속을 제거해야 한다'
+          '수입과 지출을 기록한다',
+          '차변과 대변의 금액이 항상 일치한다',
+          '현금만 기록한다',
+          '손익만 계산한다'
         ],
-        correctAnswer: 0,
-        explanation: '제1정규형(1NF)의 조건은 모든 속성이 원자값이어야 한다는 것입니다. 즉, 각 칼럼에는 더 이상 분해할 수 없는 단일 값만 저장되어야 합니다.'
+        correctAnswer: 1,
+        explanation: '복식부기는 모든 거래를 차변(왼쪽)과 대변(오른쪽)에 동시에 기록하며, 차변과 대변의 합계가 항상 일치해야 합니다.'
       },
       {
         id: 2,
-        subject: '데이터베이스',
-        question: 'ACID 속성에서 Consistency(일관성)의 의미는?',
+        subject: '회계원리',
+        question: '자산 = 부채 + 자본 공식에서 자산이 증가했을 때 일어날 수 있는 경우는?',
         options: [
-          '트랜잭션이 모두 실행되거나 모두 실행되지 않는다',
-          '트랜잭션 실행 전후에 데이터베이스가 일관된 상태를 유지한다',
-          '동시에 실행되는 트랜잭션들이 서로 영향을 주지 않는다',
-          '트랜잭션의 결과가 영구적으로 저장된다'
+          '부채만 증가',
+          '자본만 증가',
+          '부채 또는 자본이 증가',
+          '부채와 자본이 모두 감소'
         ],
-        correctAnswer: 1,
-        explanation: 'Consistency는 트랜잭션 실행 전후에 데이터베이스가 무결성 제약조건을 만족하는 일관된 상태를 유지해야 한다는 것을 의미합니다.'
+        correctAnswer: 2,
+        explanation: '회계등식에서 자산이 증가하면 부채가 증가하거나, 자본이 증가하거나, 또는 둘 다 증가할 수 있습니다.'
       }
     ],
-    '네트워크 프로그래밍': [
+    '영어회화': [
       {
         id: 1,
-        subject: '네트워크 프로그래밍',
-        question: 'TCP와 UDP의 가장 큰 차이점은 무엇인가요?',
+        subject: '영어회화',
+        question: '비즈니스 미팅에서 의견을 정중하게 반대할 때 적절한 표현은?',
         options: [
-          'TCP는 연결형, UDP는 비연결형 프로토콜이다',
-          'TCP는 빠르고, UDP는 느리다',
-          'TCP는 서버용, UDP는 클라이언트용이다',
-          'TCP는 암호화를 지원하고, UDP는 지원하지 않는다'
+          'You are wrong.',
+          'I disagree with you.',
+          'I see your point, but I have a different perspective.',
+          'That\'s not right.'
         ],
-        correctAnswer: 0,
-        explanation: 'TCP는 연결을 설정한 후 데이터를 전송하는 연결형 프로토콜이며, UDP는 연결 설정 없이 데이터를 전송하는 비연결형 프로토콜입니다.'
+        correctAnswer: 2,
+        explanation: '"I see your point, but I have a different perspective."는 상대방의 의견을 인정하면서도 정중하게 다른 관점을 제시하는 표현입니다.'
+      },
+      {
+        id: 2,
+        subject: '영어회화',
+        question: '전화로 약속을 잡을 때 사용하는 표현은?',
+        options: [
+          'When are you free?',
+          'What time do you want?',
+          'Would you be available next Tuesday?',
+          'Can you come tomorrow?'
+        ],
+        correctAnswer: 2,
+        explanation: '"Would you be available...?"는 정중하고 전문적인 방식으로 상대방의 일정을 확인하는 표현입니다.'
       }
     ],
-    '소프트웨어공학': [
+    '프로젝트 관리': [
       {
         id: 1,
-        subject: '소프트웨어공학',
-        question: '애자일 방법론의 핵심 가치가 아닌 것은?',
+        subject: '프로젝트 관리',
+        question: '프로젝트 관리에서 Critical Path란 무엇인가요?',
         options: [
-          '개인과 상호작용',
-          '작동하는 소프트웨어',
-          '고객과의 협력',
-          '완벽한 문서화'
+          '가장 비용이 많이 드는 경로',
+          '가장 위험한 작업들의 순서',
+          '프로젝트 완료까지 가장 오래 걸리는 작업 경로',
+          '가장 중요한 이해관계자들의 목록'
         ],
-        correctAnswer: 3,
-        explanation: '애자일 선언문에서는 "포괄적인 문서보다 작동하는 소프트웨어"를 더 가치있게 여깁니다. 완벽한 문서화는 애자일의 핵심 가치가 아닙니다.'
+        correctAnswer: 2,
+        explanation: 'Critical Path(임계경로)는 프로젝트 시작부터 완료까지 가장 오래 걸리는 작업들의 연속된 경로로, 이 경로의 지연은 전체 프로젝트 지연으로 이어집니다.'
       }
     ]
   };

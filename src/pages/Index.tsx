@@ -14,11 +14,11 @@ const Index = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [showAddSubjectForm, setShowAddSubjectForm] = useState(false);
   
-  // Mock data for demonstration
+  // Mock data for demonstration - diverse subjects for all professions
   const [subjects, setSubjects] = useState([
     {
       id: 1,
-      name: '운영체제',
+      name: '마케팅 전략',
       progress: 75,
       nextReview: '오늘 오후 3시',
       totalQuestions: 45,
@@ -27,7 +27,7 @@ const Index = () => {
     },
     {
       id: 2,
-      name: '데이터베이스',
+      name: '회계원리',
       progress: 60,
       nextReview: '내일 오전 9시',
       totalQuestions: 38,
@@ -36,7 +36,7 @@ const Index = () => {
     },
     {
       id: 3,
-      name: '네트워크 프로그래밍',
+      name: '영어회화',
       progress: 45,
       nextReview: '오늘 오후 7시',
       totalQuestions: 52,
@@ -45,7 +45,7 @@ const Index = () => {
     },
     {
       id: 4,
-      name: '소프트웨어공학',
+      name: '프로젝트 관리',
       progress: 30,
       nextReview: '내일 오후 2시',
       totalQuestions: 29,
